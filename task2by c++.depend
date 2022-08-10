@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1658697287 source:d:\abdalla\tasks\new folder\task2by c++\main.cpp
+	<iostream>
+	"robot.h"
+	"user.h"
+
+1658600969 source:d:\abdalla\tasks\new folder\task2by c++\src\robot.cpp
+	"robot.h"
+	<iostream>
+	<string.h>
+
+1658592543 d:\abdalla\tasks\new folder\task2by c++\include\robot.h
+	<iostream>
+
+1658593347 d:\abdalla\tasks\new folder\task2by c++\include\user.h
+	<iostream>
+
+1658600969 source:d:\abdalla\tasks\new folder\task2by c++\src\user.cpp
+	"user.h"
+	<iostream>
+
