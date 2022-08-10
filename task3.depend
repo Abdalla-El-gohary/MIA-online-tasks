@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1658253410 source:d:\abdalla\tasks\task7-strucure\1120\main.cpp
-	<iostream>
-	<string>
-	<string.h>
-	<cstdlib>
-
