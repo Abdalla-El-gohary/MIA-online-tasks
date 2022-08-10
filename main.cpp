@@ -1,59 +1,57 @@
 #include <iostream>
-#include <string>
-#include <string.h>
-#include <cstdlib>
-using namespace std;
-char output[1000];
-int count1=0;
 
-void encrypt(string input){
-    int n = input.length();
-    char arr[n+1];
-    strcpy(arr,input.c_str());
-    int r;
-    for(int i=0;i<n;i++){
-           if(arr[i+2]=='&'){
-                if(arr[i]=='1'){
-                    r=int(arr[i+1])-48;
-                    output[count1]= 'j'+r;
-                    count1++;
-                }
-                else if(arr[i]=='2'){
-                    r=int(arr[i+1])-38;
-                    output[count1]= 'j'+r;
-                    count1++;
-                }
-                i+=2;
-        }
-        else{
-            r=int(arr[i])-49;
-            output[count1]= 'a'+r;
-            count1++;
-        }
+using namespace std;
+
+int testcase[30];
+void test(int hp1,int p,int h,int z){
+    float hp = float(hp1);
+    for(int i=0;i<p;i++){
+         hp= hp/2.0 +10.0;
     }
-    output[count1]='\n';
-    count1++;
+    hp = hp - h*10.0;
+    //cout << hp <<endl;
+    if(hp<=0){
+        *(testcase+z)=1;
+    }
+    else{
+        *(testcase+z)=0;
+    }
+
 }
 int main()
 {
-    int q;
-    string input;
-    cin >>q;
+    int q,hp,p,h;
+    cin >> q;
     while(q>30 || q<0){
         cout << "invalid input,Enter a number from(1:30)";
         cin >>q;
     }
+    int i=0;
+    int a=q;
     while(q--){
-        cin>> input;
-        encrypt(input);
+        cin >> hp;
+        while(hp>100000 || hp<0){
+        cout << "invalid input,Enter a number from(1:10^5)";
+        cin >>hp;
+        }
+        cin >> p;
+        while(p>30 || p<0){
+        cout << "invalid input,Enter a number from(1:30)";
+        cin >>p;
+        }
+        cin >>h;
+        while(h>30 || h<0){
+        cout << "invalid input,Enter a number from(1:30)";
+        cin >>h;
+        }
+        test(hp,p,h,i);
+        i++;
     }
-    for(int i=0;i<count1;i++){
-        if(output[i]=='\n'){
-            cout<<endl;
-        }
-        else{
-            cout<<output[i];
-        }
+    for(int j=0;j<a;j++){
+        if(testcase[j]==1)
+           cout<< "Yes"<<endl;
+        else
+            cout<< "No"<<endl;
     }
     return 0;
 }
