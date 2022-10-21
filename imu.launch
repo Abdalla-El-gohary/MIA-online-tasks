@@ -1,0 +1,8 @@
+<launch>
+	<node name="serial_node"        pkg="rosserial_python"      type="serial_node.py">
+    	<param name="port"              type="string"               value="/dev/ttyACM0"/>
+    	<param name="baud"              type="int"                  value="115200"/>
+    </node>
+	<node name="listener_node" pkg="my_robot_control" type="imu_subscriber.py" output="screen"/>
+	<node name="rqt_plot" pkg="rqt_plot" type="rqt_plot" output="screen" />
+</launch>
